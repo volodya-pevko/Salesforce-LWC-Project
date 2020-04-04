@@ -1,0 +1,29 @@
+div.header {
+    width: 100%;
+    height: 10%;
+    padding: 30px;
+    float: left;
+}
+
+h1.header {
+    display: inline;
+    font: 18pt sans-serif;
+}
+
+button.sendEmail {
+    float: right;
+}
+
+div.fields {
+    width: 30%;
+    height: auto;
+    padding: 30px;
+    padding-right:0;
+    float:left;
+}
+
+div.products {
+    width: 75%;
+    height: auto;
+    float:left;
+}
