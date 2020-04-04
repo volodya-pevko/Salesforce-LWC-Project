@@ -1,9 +1,9 @@
 import { LightningElement, track} from 'lwc';
 
 const columns = [
-    { label: 'Lead', fieldName: 'name' },
-    { label: 'Owner', fieldName: 'website', type: 'url' },
-    { label: 'Created by', fieldName: 'createdBy', type: 'phone' },
+    { label: 'Product name', fieldName: 'name' },
+    { label: 'Amount', fieldName: 'website', type: 'url' },
+    { label: 'Price', fieldName: 'createdBy', type: 'phone' },
     { label: 'Last modified by', fieldName: 'lastModifiedBy', type: 'currency' },
 ];
 

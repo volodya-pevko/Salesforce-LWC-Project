@@ -1,0 +1,50 @@
+<!--Modal popup window component-->
+
+<template>
+  <template if:true={showModal}>
+    <section
+      role="dialog"
+      tabindex="-1"
+      class="slds-modal slds-fade-in-open slds-modal_medium"
+      aria-labelledby="modal-heading-01"
+      aria-modal="true"
+      aria-describedby="modal-content-id-1"
+    >
+      <div class="slds-modal__container">
+        <!--Modal popup header-->
+        <header class="slds-modal__header">
+          <lightning-button-icon
+            icon-name="utility:close"
+            class="slds-float_right"
+            onclick={closeModal}
+            alternative-text="close"
+          ></lightning-button-icon>
+          <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+            {modalHeading}
+          </h2>
+        </header>
+        <!--Modal popup body-->
+        <div
+          class="slds-modal__content slds-p-around_medium"
+          id="modal-content-id-1"
+        >
+          <!--Quote fields-->
+          <div class="fields">
+            <c-quote-view-form></c-quote-view-form><br />
+          </div>
+          <!--Quote related products list-->
+          <div class="products">
+            <c-related-products-datatable></c-related-products-datatable>
+          </div>
+          <div class="sendButtonAndTotalPrice">
+            <h2 style="float: left;">Total quote price: {totalPrice}</h2>
+            <c-button-send-formatted-email
+              style="float: right;"
+            ></c-button-send-formatted-email>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+</template>
