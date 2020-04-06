@@ -30,15 +30,20 @@
         >
           <!--Quote fields-->
           <div class="fields">
-            <c-quote-view-form></c-quote-view-form><br />
+            <h2>Quote fields</h2>
+            <c-quote-view-form quote-id={quoteId}> </c-quote-view-form><br />
           </div>
           <!--Quote related products list-->
           <div class="products">
-            <c-related-products-datatable></c-related-products-datatable>
+            <h2>Related products</h2>
+            <c-related-products-datatable quote-id={quoteId}>
+            </c-related-products-datatable>
           </div>
+          <!--Total price value and sendEmail button-->
           <div class="sendButtonAndTotalPrice">
-            <h2 style="float: left;">Total quote price: {totalPrice}</h2>
+            <h2 style="float: left;">Total price: {totalPrice.data}</h2>
             <c-button-send-formatted-email
+              quote-id={quoteId}
               style="float: right;"
             ></c-button-send-formatted-email>
           </div>

@@ -1,5 +1,5 @@
-import { LightningElement, track} from 'lwc';
+import { LightningElement, track, api } from "lwc";
 
 export default class QuoteViewForm extends LightningElement {
-    @track quoteId;
+  @api quoteId;
 }

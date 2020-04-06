@@ -1,26 +1,21 @@
-import { LightningElement, api, track } from "lwc";
+import { LightningElement, api, wire, track } from "lwc";
+import countTotalPrice from "@salesforce/apex/QuoteDataProcessing.countTotalPrice";
 
 export default class QuoteModalPopup extends LightningElement {
   @api showModal = false;
-  @api message;
-  @api modalHeading;
+  @api modalHeading = "Quote";
+  @api quoteId;
 
-  @track totalPrice;
+  @wire(countTotalPrice, { quoteId: "$quoteId" })
+  totalPrice;
 
   @api
   openModal() {
     this.showModal = true;
-    //Add quote name
-    this.modalHeading = "Quote";
   }
 
   @api
   closeModal() {
     this.showModal = false;
-  }
-
-  @api
-  countTotalPrice() {
-    this.totalPrice = 0;
   }
 }
